@@ -12,14 +12,19 @@ class SharedTableViewController: UITableViewController {
     
     var shareditems = [SharedItem]()
     
+    var prototypeCell: SharedTableViewCell!
+    
     func loadSampleItems(){
-        shareditems += [SharedItem(name:"to be shared item1 jilinilnilnlaindlinlaindlinalindilanlidnliandlnlaijlifjlinalijlijalij"),SharedItem(name:"to be shared item2"),SharedItem(name:"to be shared item3")]
+        shareditems += [SharedItem(name:"to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout "),SharedItem(name:"to be shared item2 to be shared item1 autolayout to be shared item1 autolayout"),SharedItem(name:"to be shared item3 to be shared item1 autolayout ")]
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadSampleItems()
+        
+        tableView.estimatedRowHeight = 90
+        tableView.rowHeight = UITableViewAutomaticDimension
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -58,6 +63,8 @@ class SharedTableViewController: UITableViewController {
 
         return cell
     }
+    
+
     
 
     /*
