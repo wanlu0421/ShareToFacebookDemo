@@ -11,6 +11,7 @@ import UIKit
 class SharedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var LableTitle: UILabel!
+    @IBOutlet weak var ButtonShare: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
