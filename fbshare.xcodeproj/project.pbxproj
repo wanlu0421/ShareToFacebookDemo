@@ -13,6 +13,9 @@
 		0953CB161D8F5AB800839D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0953CB151D8F5AB800839D6C /* Assets.xcassets */; };
 		0953CB191D8F5AB800839D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0953CB171D8F5AB800839D6C /* LaunchScreen.storyboard */; };
 		0953CB241D8F5AB800839D6C /* fbshareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953CB231D8F5AB800839D6C /* fbshareTests.swift */; };
+		0953CB2F1D8F5B3300839D6C /* SharedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953CB2E1D8F5B3300839D6C /* SharedTableViewCell.swift */; };
+		0953CB311D8F5C3500839D6C /* SharedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953CB301D8F5C3500839D6C /* SharedItem.swift */; };
+		0953CB331D8F5D1D00839D6C /* SharedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953CB321D8F5D1D00839D6C /* SharedTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		0953CB1F1D8F5AB800839D6C /* fbshareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fbshareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0953CB231D8F5AB800839D6C /* fbshareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fbshareTests.swift; sourceTree = "<group>"; };
 		0953CB251D8F5AB800839D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0953CB2E1D8F5B3300839D6C /* SharedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTableViewCell.swift; sourceTree = "<group>"; };
+		0953CB301D8F5C3500839D6C /* SharedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedItem.swift; sourceTree = "<group>"; };
+		0953CB321D8F5D1D00839D6C /* SharedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,9 @@
 				0953CB0E1D8F5AB800839D6C /* AppDelegate.swift */,
 				0953CB101D8F5AB800839D6C /* ViewController.swift */,
 				0953CB121D8F5AB800839D6C /* Main.storyboard */,
+				0953CB2E1D8F5B3300839D6C /* SharedTableViewCell.swift */,
+				0953CB321D8F5D1D00839D6C /* SharedTableViewController.swift */,
+				0953CB301D8F5C3500839D6C /* SharedItem.swift */,
 				0953CB151D8F5AB800839D6C /* Assets.xcassets */,
 				0953CB171D8F5AB800839D6C /* LaunchScreen.storyboard */,
 				0953CB1A1D8F5AB800839D6C /* Info.plist */,
@@ -198,7 +207,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0953CB111D8F5AB800839D6C /* ViewController.swift in Sources */,
+				0953CB311D8F5C3500839D6C /* SharedItem.swift in Sources */,
+				0953CB331D8F5D1D00839D6C /* SharedTableViewController.swift in Sources */,
 				0953CB0F1D8F5AB800839D6C /* AppDelegate.swift in Sources */,
+				0953CB2F1D8F5B3300839D6C /* SharedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
