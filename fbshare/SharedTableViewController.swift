@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SharedTableViewController: UITableViewController {
+class SharedTableViewController: UITableViewController ,FBSDKSharingDelegate {
     
 //    var shareditems : NSMutableArray! = NSMutableArray()
     
@@ -39,7 +39,13 @@ class SharedTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
+    func alertShow(typeStr: String) {
+        let alertController = UIAlertController(title: "", message: typeStr, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+/*
     func showLinkButton(sender:FBSDKShareButton)
     {
 
@@ -52,7 +58,7 @@ class SharedTableViewController: UITableViewController {
         
         sender.shareContent = content
     }
-
+*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -79,8 +85,9 @@ class SharedTableViewController: UITableViewController {
         
         cell.LableTitle.text = shareditem.name
         cell.ButtonShare.tag = indexPath.row
+        cell.ButtonShare.addTarget(self, action: "sharedbuttonclicked:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        showLinkButton(cell.ButtonShare)
+        //showLinkButton(cell.ButtonShare)
 
         // Configure the cell...
 
@@ -88,7 +95,38 @@ class SharedTableViewController: UITableViewController {
     }
     
 
+    func sharedbuttonclicked(sender:UIButton!){
+        
+        let contentstring = shareditems[sender.tag].name
+        let content : FBSDKShareLinkContent = FBSDKShareLinkContent()
+        content.contentURL = NSURL(string: self.contentURL)
+        content.contentTitle = contentstring
+        content.contentDescription = self.contentDescription
+        content.imageURL = NSURL(string: self.contentURLImage)
+        
+        let shareFB : FBSDKShareDialog = FBSDKShareDialog()
+        
+        shareFB.shareContent = content
+        shareFB.delegate = self
+        shareFB.show()
+        
+    }
     
+    func sharer(sharer: FBSDKSharing!, didCompleteWithResults results: [NSObject : AnyObject]!) {
+        print("didCompleteWithResults")
+        alertShow("Sucessful Shared!")
+    }
+    
+    func sharer(sharer: FBSDKSharing!, didFailWithError error: NSError!) {
+        print("didFailWithError")
+        alertShow("Failed with error!")
+    }
+    
+    func sharerDidCancel(sharer: FBSDKSharing!) {
+        print("sharerDidCancel")
+        alertShow("Canceled!")
+    }
+  
 
     /*
     // Override to support conditional editing of the table view.
@@ -135,4 +173,6 @@ class SharedTableViewController: UITableViewController {
     }
     */
 
+    
+ 
 }

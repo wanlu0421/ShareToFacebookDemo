@@ -47,7 +47,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nd4-F6-dC4" customClass="FBSDKShareButton">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nd4-F6-dC4">
                                             <rect key="frame" x="491" y="30" width="46" height="30"/>
                                             <state key="normal" title="ButtonShare"/>
                                         </button>
@@ -63,7 +63,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="ButtonShare" destination="nd4-F6-dC4" id="cdE-VE-eCh"/>
+                                    <outlet property="ButtonShare" destination="nd4-F6-dC4" id="sFi-BD-z0z"/>
                                     <outlet property="LableTitle" destination="uba-xW-Z8h" id="pYL-K7-tT7"/>
                                 </connections>
                             </tableViewCell>

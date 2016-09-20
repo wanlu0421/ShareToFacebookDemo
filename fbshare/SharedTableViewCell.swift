@@ -12,8 +12,7 @@ class SharedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var LableTitle: UILabel!
 
-    @IBOutlet weak var ButtonShare: FBSDKShareButton!
-    
+    @IBOutlet weak var ButtonShare: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +24,7 @@ class SharedTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
+
 
 }
