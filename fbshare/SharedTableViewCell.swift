@@ -11,7 +11,10 @@ import UIKit
 class SharedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var LableTitle: UILabel!
-    @IBOutlet weak var ButtonShare: UIButton!
+
+    @IBOutlet weak var ButtonShare: FBSDKShareButton!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

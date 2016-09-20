@@ -10,12 +10,18 @@ import UIKit
 
 class SharedTableViewController: UITableViewController {
     
+//    var shareditems : NSMutableArray! = NSMutableArray()
+    
     var shareditems = [SharedItem]()
     
     var prototypeCell: SharedTableViewCell!
-    
+
+    let contentURL = "https://ca.linkedin.com/in/wanlu-wei-2a0bab105"
+    let contentURLImage = "http://blog.investis.com/en/wp-content/uploads/2016/02/Linkedin-logo.png"
+    let contentDescription = "The link will take you to my linkedin page"
+
     func loadSampleItems(){
-        shareditems += [SharedItem(name:"to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout "),SharedItem(name:"to be shared item2 to be shared item1 autolayout to be shared item1 autolayout"),SharedItem(name:"to be shared item3 to be shared item1 autolayout ")]
+        shareditems += [SharedItem(name:"to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout to be shared item1 autolayout "),SharedItem(name:"to be shared item2 to be shared item2 autolayout to be shared item2 autolayout"),SharedItem(name:"to be shared item3 to be shared item3 autolayout ")]
     }
 
     override func viewDidLoad() {
@@ -25,12 +31,26 @@ class SharedTableViewController: UITableViewController {
         
         tableView.estimatedRowHeight = 90
         tableView.rowHeight = UITableViewAutomaticDimension
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+
+    func showLinkButton(sender:FBSDKShareButton)
+    {
+
+        let contentstring = shareditems[sender.tag].name
+        let content : FBSDKShareLinkContent = FBSDKShareLinkContent()
+        content.contentURL = NSURL(string: self.contentURL)
+        content.contentTitle = contentstring
+        content.contentDescription = self.contentDescription
+        content.imageURL = NSURL(string: self.contentURLImage)
+        
+        sender.shareContent = content
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +78,9 @@ class SharedTableViewController: UITableViewController {
         let shareditem = shareditems[indexPath.row]
         
         cell.LableTitle.text = shareditem.name
+        cell.ButtonShare.tag = indexPath.row
+        
+        showLinkButton(cell.ButtonShare)
 
         // Configure the cell...
 
